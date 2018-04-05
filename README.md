@@ -24,6 +24,8 @@ Or install it yourself as:
 require "arabic"
 ```
 
+And then
+
 ```ruby
 Arabic.transliterate("العربية")
 ```
