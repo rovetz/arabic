@@ -2,6 +2,7 @@ require "arabic/version"
 
 module Arabic
   CHARACTER_TABLE = {
+    # Numbers
     "٠" => "0",
     "١" => "1",
     "٢" => "2",
@@ -12,8 +13,11 @@ module Arabic
     "٧" => "7",
     "۸" => "8",
     "٩" => "9",
+    # Punctuation
     "،" => ",",
+    "؛" => ";",
     "؟" => "?",
+    # Consonants (Letters of the Alphabet)
     "ء" => "e",
     "آ" => "a",
     "أ" => "a",
@@ -51,6 +55,7 @@ module Arabic
     "ى" => "a",
     "ي" => "y",
     "و‎" => "u",
+    # Vowels and Diphthongs
     "َ‎"  => "a",
     "ُ"  => "u",
     "ِ‎"  => "i"
