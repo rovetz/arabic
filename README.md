@@ -1,6 +1,6 @@
 # Arabic
 
-Romanization of Arabic. It transliterates Arabic text to the Roman (Latin) script
+Romanization of Arabic. It transliterates Arabic text to the Roman (Latin) script.
 
 ## Installation
 
@@ -19,6 +19,10 @@ Or install it yourself as:
     $ gem install arabic
 
 ## Usage
+
+```ruby
+require "arabic"
+```
 
 ```ruby
 Arabic.transliterate("العربية")
