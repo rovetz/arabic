@@ -8,4 +8,8 @@ class ArabicTest < Minitest::Test
   def test_it_does_something_useful
     assert_equal "alerbyt", Arabic.t("العربية")
   end
+
+  def test_it_transliterates_urdu
+    assert_equal "ardū", Arabic.t("اردو", :urdu)
+  end
 end
