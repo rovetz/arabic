@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    arabic (0.1.0)
+    arabic (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -19,4 +19,4 @@ DEPENDENCIES
   rake (~> 10.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
