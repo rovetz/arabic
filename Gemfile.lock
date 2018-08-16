@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    arabic (0.1.1)
+    arabic (0.1.2)
 
 GEM
   remote: https://rubygems.org/
