@@ -5,11 +5,19 @@ class ArabicTest < Minitest::Test
     refute_nil ::Arabic::VERSION
   end
 
-  def test_it_does_something_useful
+  def test_it_transliterates_arabic
     assert_equal "alerbyt", Arabic.t("العربية")
   end
 
+  def test_it_transliterates_numbers
+    assert_equal "1996", Arabic.t("١٩٩٦")
+  end
+
   def test_it_transliterates_urdu
-    assert_equal "ardū", Arabic.t("اردو", :urdu)
+    assert_equal "ardv", Arabic.t("اردو", :urdu)
+  end
+
+  def test_it_transliterates_urdu_numbers
+    assert_equal "1996", Arabic.t("۱۹۹۶", :urdu)
   end
 end
