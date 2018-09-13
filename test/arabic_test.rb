@@ -10,14 +10,6 @@ class ArabicTest < Minitest::Test
   end
 
   def test_it_transliterates_numbers
-    assert_equal "1996", Arabic.t("١٩٩٦")
-  end
-
-  def test_it_transliterates_urdu
-    assert_equal "ardv", Arabic.t("اردو", :urdu)
-  end
-
-  def test_it_transliterates_urdu_numbers
-    assert_equal "1996", Arabic.t("۱۹۹۶", :urdu)
+    assert_equal "0123456789", Arabic.t("٠١٢٣٤٥٦٧۸٩")
   end
 end
