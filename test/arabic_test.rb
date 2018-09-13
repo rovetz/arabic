@@ -7,6 +7,7 @@ class ArabicTest < Minitest::Test
 
   def test_it_transliterates_arabic
     assert_equal "alerbyt", Arabic.t("العربية")
+    assert_equal "alshrq aladna", Arabic.t("الشرق الأدنى")
   end
 
   def test_it_transliterates_numbers
