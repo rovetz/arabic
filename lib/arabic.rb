@@ -1,5 +1,6 @@
 require "arabic/version"
 require "arabic/urdu"
+require "arabic/iso233"
 
 module Arabic
   CHARACTER_TABLE = {
