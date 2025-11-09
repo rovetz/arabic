@@ -8,12 +8,12 @@ class ArabicTest < Minitest::Test
   end
 
   def test_it_transliterates_arabic
-    assert_equal "alerbyt", Arabic.t("العربية", to: :default)
-    assert_equal "alshrq aladna", Arabic.t("الشرق الأدنى", to: :default)
+    assert_equal "alerbyt", Arabic.t("العربية")
+    assert_equal "alshrq aladna", Arabic.t("الشرق الأدنى")
   end
 
   def test_it_transliterates_numbers
-    assert_equal "0123456789", Arabic.t("٠١٢٣٤٥٦٧۸٩", to: :default)
+    assert_equal "0123456789", Arabic.t("٠١٢٣٤٥٦٧۸٩")
   end
 
   def test_it_transliterates_with_default_scheme

@@ -66,16 +66,8 @@ module Arabic
   }.freeze
 
   class << self
-    def transliterate(string = '', options = {})
-      to = options.fetch(:to, :default)
-      character_table = case to
-                        when :urdu
-                          Urdu::CHARACTER_TABLE
-                        when :iso233
-                          Iso233::CHARACTER_TABLE
-                        else
-                          CHARACTER_TABLE
-                        end
+    def transliterate(string="", to=:arabic)
+      character_table = Module.const_get(to.to_s.capitalize)::CHARACTER_TABLE
       string.to_s.gsub(/#{Regexp.union(character_table.keys).source}/i, character_table)
     end
     alias t transliterate
