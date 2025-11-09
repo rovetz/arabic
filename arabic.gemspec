@@ -1,4 +1,6 @@
-lib = File.expand_path("../lib", __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require "arabic/version"
@@ -24,4 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.6"
   spec.add_development_dependency "rake", "~> 13.2"
   spec.add_development_dependency "minitest", "~> 5.25"
+  spec.add_development_dependency "rubocop", "~> 1.64"
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end

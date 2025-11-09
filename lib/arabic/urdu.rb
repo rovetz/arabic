@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Urdu
   CHARACTER_TABLE = {
     # Numbers
@@ -54,7 +56,7 @@ module Urdu
     "ه" => "h",
     "ﮨ" => "h",
     "ﮩ" => "h",
-    "ہ" => "h",
+    "ه" => "h",
     "ھ" => "h",
     "ء" => "'",
     "ة" => "t",
@@ -64,5 +66,5 @@ module Urdu
     "ے" => "e",
     "ۂ" => "a",
     "ؤ" => "o"
-  }
+  }.freeze
 end

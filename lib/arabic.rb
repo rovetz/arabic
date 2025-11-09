@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "arabic/version"
 require "arabic/urdu"
 require "arabic/iso233"
@@ -61,14 +63,21 @@ module Arabic
     "َ‎"  => "a",
     "ُ"  => "u",
     "ِ‎"  => "i"
-  }
+  }.freeze
 
   class << self
-    def transliterate(string="", to=:arabic)
-      character_table = Module.const_get(to.to_s.capitalize)::CHARACTER_TABLE
+    def transliterate(string = '', options = {})
+      to = options.fetch(:to, :default)
+      character_table = case to
+                        when :urdu
+                          Urdu::CHARACTER_TABLE
+                        when :iso233
+                          Iso233::CHARACTER_TABLE
+                        else
+                          CHARACTER_TABLE
+                        end
       string.to_s.gsub(/#{Regexp.union(character_table.keys).source}/i, character_table)
     end
-    alias_method :t, :transliterate
+    alias t transliterate
   end
-
 end

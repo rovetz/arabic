@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Iso233
   CHARACTER_TABLE = {
     # Numbers
@@ -49,5 +51,5 @@ module Iso233
     "و" => "w",
     "ي" => "y",
     "ى" => "ỳ"
-  }
+  }.freeze
 end
