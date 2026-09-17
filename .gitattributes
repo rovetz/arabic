@@ -1,0 +1,6 @@
+# Ensure consistent LF line endings and proper diff drivers across platforms
+* text=auto eol=lf
+*.rb text eol=lf diff=ruby
+*.gemspec text eol=lf diff=ruby
+*.yml text eol=lf
+*.md text eol=lf

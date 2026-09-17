@@ -75,6 +75,18 @@ module Arabic
   }.freeze
 
   class << self
+    # Transliterates Arabic, Urdu, and related text into Latin script.
+    #
+    # @param string [String, #to_s] The text to transliterate.
+    # @param to [Symbol, String] The transliteration scheme (:arabic, :urdu, :iso233).
+    # @return [String] The transliterated Latin script string.
+    # @raise [ArgumentError] If the given transliteration scheme is unknown.
+    #
+    # @example Default Arabic transliteration
+    #   Arabic.transliterate("العربية") #=> "alerbyt"
+    #
+    # @example Urdu transliteration using short alias .t
+    #   Arabic.t("اردو", :urdu) #=> "ardv"
     def transliterate(string = "", to = :arabic)
       scheme = SCHEMES[to.to_s.downcase.to_sym]
       unless scheme
