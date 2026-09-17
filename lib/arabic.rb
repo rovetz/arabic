@@ -59,11 +59,10 @@ module Arabic
     "و" => "w",
     "ى" => "a",
     "ي" => "y",
-    "و‎" => "u",
     # Vowels and Diphthongs
-    "َ‎" => "a",
+    "َ" => "a",
     "ُ" => "u",
-    "ِ‎" => "i"
+    "ِ" => "i"
   }.freeze
 
   REGEXP = Regexp.union(CHARACTER_TABLE.keys).freeze
@@ -71,14 +70,15 @@ module Arabic
   SCHEMES = {
     arabic: [CHARACTER_TABLE, REGEXP].freeze,
     urdu: [Urdu::CHARACTER_TABLE, Urdu::REGEXP].freeze,
-    iso233: [Iso233::CHARACTER_TABLE, Iso233::REGEXP].freeze
+    iso233: [Iso233::CHARACTER_TABLE, Iso233::REGEXP].freeze,
+    persian: [Persian::CHARACTER_TABLE, Persian::REGEXP].freeze
   }.freeze
 
   class << self
-    # Transliterates Arabic, Urdu, and related text into Latin script.
+    # Transliterates Arabic, Urdu, Persian, and related text into Latin script.
     #
     # @param string [String, #to_s] The text to transliterate.
-    # @param to [Symbol, String] The transliteration scheme (:arabic, :urdu, :iso233).
+    # @param to [Symbol, String] The transliteration scheme (:arabic, :urdu, :iso233, :persian).
     # @return [String] The transliterated Latin script string.
     # @raise [ArgumentError] If the given transliteration scheme is unknown.
     #

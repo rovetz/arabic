@@ -17,10 +17,12 @@ parser = OptionParser.new do |opts|
   opts.separator "  arabic text.txt"
   opts.separator "  arabic -s urdu 'اردو'"
   opts.separator "  arabic -s iso233 'كتاب'"
+  opts.separator "  arabic -s persian 'فارسی'"
   opts.separator ""
   opts.separator "Options:"
 
-  opts.on("-s", "--scheme SCHEME", %w[default urdu iso233], "Transliteration scheme (default, urdu, iso233)") do |s|
+  opts.on("-s", "--scheme SCHEME", %w[default urdu iso233 persian],
+          "Transliteration scheme (default, urdu, iso233, persian)") do |s|
     scheme = s == "default" ? nil : s.to_sym
   end
 

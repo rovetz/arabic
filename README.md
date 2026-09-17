@@ -42,6 +42,10 @@ Arabic.t("اردو", :urdu)
 Arabic.t("اردو", :iso233)
 # => "ʾrdw"
 
+# Persian scheme
+Arabic.t("فارسی", :persian)
+# => "farsy"
+
 # Numbers and punctuation
 Arabic.t("٠١٢٣٤٥٦٧۸٩")
 # => "0123456789"
@@ -63,12 +67,15 @@ alerbyt
 # File input
 $ arabic text.txt
 
-# Select transliteration scheme (default, urdu, iso233)
+# Select transliteration scheme (default, urdu, iso233, persian)
 $ arabic -s urdu "اردو"
 ardv
 
 $ arabic -s iso233 "كتاب"
 ktʾb
+
+$ arabic -s persian "فارسی"
+farsy
 ```
 
 ## Development

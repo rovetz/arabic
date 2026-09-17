@@ -43,6 +43,19 @@ class ArabicTest < Minitest::Test
     assert_equal Arabic::Persian, ::Persian
   end
 
+  def test_it_transliterates_with_persian_scheme
+    assert_equal "farsy", Arabic.t("فارسی", :persian)
+    assert_equal "chshm", Arabic.t("چشم", :persian)
+    assert_equal "zhalh", Arabic.t("ژاله", :persian)
+    assert_equal "grbh", Arabic.t("گربه", :persian)
+    assert_equal "pdr", Arabic.t("پدر", :persian)
+    assert_equal "0123456789", Arabic.t("۰۱۲۳۴۵۶۷۸۹", :persian)
+  end
+
+  def test_it_transliterates_vowels_cleanly
+    assert_equal "kataba", Arabic.t("كَتَبَ")
+  end
+
   def test_cli_argument
     out, status = Open3.capture2("bundle exec exe/arabic 'العربية'")
 
@@ -55,6 +68,13 @@ class ArabicTest < Minitest::Test
 
     assert_predicate status, :success?
     assert_equal "ardv\n", out
+  end
+
+  def test_cli_persian_scheme_argument
+    out, status = Open3.capture2("bundle exec exe/arabic -s persian 'فارسی'")
+
+    assert_predicate status, :success?
+    assert_equal "farsy\n", out
   end
 
   def test_cli_stdin

@@ -7,13 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-09-17
+
 ### Added
+- Persian transliteration scheme (`:persian`) with full 32-letter alphabet and Persian numerals support.
 - CLI executable `exe/arabic` supporting direct arguments, files, piped STDIN, and scheme flag (`-s`).
 - Integration tests for CLI arguments, flags, and STDIN input.
 - GitHub Actions CI workflow for modern Ruby versions on `main` branch with experimental `head`.
 - Automated GitHub Actions release workflow for building and publishing gem on git tag push.
 - Precompiled and cached regular expressions for character tables for improved performance.
-- Case-insensitive scheme resolution (e.g. `:urdu`, `"urdu"`, `:URDU`).
+- Case-insensitive scheme resolution (e.g. `:urdu`, `"urdu"`, `:URDU`, `:persian`).
 - Informative `ArgumentError` when an unknown transliteration scheme is specified.
 - Standard gem metadata URIs (`source_code_uri`, `changelog_uri`, `bug_tracker_uri`).
 - RuboCop code style checks integrated into default `rake` task.
@@ -26,10 +29,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Set minimum required Ruby version to `>= 3.3.0` in gemspec.
 - Untrack `Gemfile.lock` and add to `.gitignore` following gem development best practices.
 - Update copyright year to 2018-2026 in `LICENSE.txt`.
+- Clean up invisible `\u200E` (Left-to-Right Mark) control characters in Arabic vowel table.
+- Clean up placeholder dotted circle `\u25CC` characters in ISO 233 hamza diacritics.
 
 ### Removed
 - Legacy `.travis.yml` configuration.
-- Unused `exe` executable configuration from gemspec.
 
 ## [0.1.7] - 2025-04-03
 

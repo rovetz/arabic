@@ -20,8 +20,8 @@ module Arabic
       "؟" => "?",
       # Consonants (Letters of the Alphabet)
       "ء" => "ˌ",
-      "ٔ◌" => "ˈ",
-      "ٕ◌" => "",
+      "ٔ" => "ˈ",
+      "ٕ" => "",
       "ا" => "ʾ",
       "ب" => "b",
       "ت" => "t",
