@@ -9,6 +9,7 @@ GEM
     ast (2.4.3)
     cgi (0.5.2)
     date (3.5.1)
+    docile (1.4.1)
     erb (4.0.4.1)
       cgi (>= 0.3.3)
     io-console (0.8.1)
@@ -56,6 +57,12 @@ GEM
       parser (>= 3.3.7.2)
       prism (~> 1.4)
     ruby-progressbar (1.13.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.13.2)
+    simplecov_json_formatter (0.1.4)
     stringio (3.2.0)
     tsort (0.2.0)
     unicode-display_width (3.2.0)
@@ -73,6 +80,7 @@ DEPENDENCIES
   rake (~> 13.2)
   rdoc
   rubocop (~> 1.64)
+  simplecov (~> 0.22)
 
 BUNDLED WITH
    2.7.2

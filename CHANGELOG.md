@@ -9,11 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - GitHub Actions CI workflow for modern Ruby versions (3.1, 3.2, 3.3, 3.4) on `main` branch.
+- Automated GitHub Actions release workflow for building and publishing gem on git tag push.
 - Precompiled and cached regular expressions for character tables for improved performance.
 - Case-insensitive scheme resolution (e.g. `:urdu`, `"urdu"`, `:URDU`).
 - Informative `ArgumentError` when an unknown transliteration scheme is specified.
 - Standard gem metadata URIs (`source_code_uri`, `changelog_uri`, `bug_tracker_uri`).
 - RuboCop code style checks integrated into default `rake` task.
+- SimpleCov code test coverage tracking with 100% line coverage.
 - Unit tests for edge cases (nil/empty strings, scheme normalization, error handling).
 
 ### Changed
