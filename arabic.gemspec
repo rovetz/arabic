@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Converts Arabic text to the Roman (Latin) script"
   spec.homepage      = "https://github.com/rovetz/arabic"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 3.1.0"
+  spec.required_ruby_version = ">= 3.2.0"
 
   spec.metadata["source_code_uri"] = "https://github.com/rovetz/arabic"
   spec.metadata["changelog_uri"] = "https://github.com/rovetz/arabic/blob/main/CHANGELOG.md"
@@ -30,7 +30,6 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 2.6"
   spec.add_development_dependency "irb"
   spec.add_development_dependency "minitest", "~> 5.25"
   spec.add_development_dependency "rake", "~> 13.2"
