@@ -17,7 +17,6 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
-  spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/rovetz/arabic"
   spec.metadata["changelog_uri"] = "https://github.com/rovetz/arabic/blob/main/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "https://github.com/rovetz/arabic/issues"
