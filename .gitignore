@@ -6,4 +6,5 @@
 /pkg/
 /spec/reports/
 /tmp/
-.rubocop.yml
+*.gem
+/.ruby-lsp/

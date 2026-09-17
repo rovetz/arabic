@@ -1,0 +1,10 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'bin/console'
+    - 'bin/setup'
+    - 'test/**/*'
+    - 'pkg/**/*'
+
+Style/Documentation:
+  Enabled: false
