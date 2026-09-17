@@ -3,6 +3,7 @@
 require "arabic/version"
 require "arabic/urdu"
 require "arabic/iso233"
+require "arabic/persian"
 
 module Arabic
   CHARACTER_TABLE = {
@@ -65,10 +66,24 @@ module Arabic
     "ِ‎" => "i"
   }.freeze
 
+  REGEXP = Regexp.union(CHARACTER_TABLE.keys).freeze
+
+  SCHEMES = {
+    arabic: [CHARACTER_TABLE, REGEXP].freeze,
+    urdu: [Urdu::CHARACTER_TABLE, Urdu::REGEXP].freeze,
+    iso233: [Iso233::CHARACTER_TABLE, Iso233::REGEXP].freeze
+  }.freeze
+
   class << self
     def transliterate(string = "", to = :arabic)
-      character_table = Module.const_get(to.to_s.capitalize)::CHARACTER_TABLE
-      string.to_s.gsub(/#{Regexp.union(character_table.keys).source}/i, character_table)
+      scheme = SCHEMES[to.to_s.downcase.to_sym]
+      unless scheme
+        available = SCHEMES.keys.map(&:inspect).join(", ")
+        raise ArgumentError, "Unknown transliteration scheme: #{to.inspect}. Available schemes: #{available}"
+      end
+
+      table, regexp = scheme
+      string.to_s.gsub(regexp, table)
     end
     alias t transliterate
   end
