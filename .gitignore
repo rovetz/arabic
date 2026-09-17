@@ -8,3 +8,4 @@
 /tmp/
 *.gem
 /.ruby-lsp/
+/.ruby-version
