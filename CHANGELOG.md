@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unit tests for edge cases (nil/empty strings, scheme normalization, error handling).
 
 ### Changed
+- Update development dependencies (rubocop, rake, rdoc, irb, json, minitest).
 - Namespaced `Urdu`, `Iso233`, and `Persian` modules under `Arabic` (`Arabic::Urdu`, `Arabic::Iso233`, `Arabic::Persian`) with backwards-compatible top-level aliases.
 - Set minimum required Ruby version to `>= 3.2.0` in gemspec.
 

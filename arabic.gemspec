@@ -31,9 +31,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "irb"
-  spec.add_development_dependency "minitest", "~> 5.25"
-  spec.add_development_dependency "rake", "~> 13.2"
+  spec.add_development_dependency "minitest", ">= 5.25"
+  spec.add_development_dependency "rake", ">= 13.2"
   spec.add_development_dependency "rdoc"
-  spec.add_development_dependency "rubocop", "~> 1.64"
-  spec.add_development_dependency "simplecov", "~> 0.22"
+  spec.add_development_dependency "rubocop", ">= 1.64"
+  spec.add_development_dependency "simplecov", ">= 0.22"
 end
