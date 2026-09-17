@@ -42,4 +42,39 @@ class ArabicTest < Minitest::Test
     assert_equal Arabic::Iso233, ::Iso233
     assert_equal Arabic::Persian, ::Persian
   end
+
+  def test_cli_argument
+    out, status = Open3.capture2("bundle exec exe/arabic 'العربية'")
+
+    assert_predicate status, :success?
+    assert_equal "alerbyt\n", out
+  end
+
+  def test_cli_scheme_argument
+    out, status = Open3.capture2("bundle exec exe/arabic -s urdu 'اردو'")
+
+    assert_predicate status, :success?
+    assert_equal "ardv\n", out
+  end
+
+  def test_cli_stdin
+    out, status = Open3.capture2("bundle exec exe/arabic", stdin_data: "العربية\n")
+
+    assert_predicate status, :success?
+    assert_equal "alerbyt\n", out
+  end
+
+  def test_cli_version
+    out, status = Open3.capture2("bundle exec exe/arabic --version")
+
+    assert_predicate status, :success?
+    assert_equal "arabic #{Arabic::VERSION}\n", out
+  end
+
+  def test_cli_help
+    out, status = Open3.capture2("bundle exec exe/arabic --help")
+
+    assert_predicate status, :success?
+    assert_includes out, "Usage: arabic"
+  end
 end

@@ -26,6 +26,11 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version: ['3.3', '3.4']
+        include:
+          - ruby-version: 'head'
+            experimental: true
+
+    continue-on-error: ${{ matrix.experimental || false }}
 
     steps:
     - uses: actions/checkout@v4

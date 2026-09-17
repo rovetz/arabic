@@ -1,0 +1,63 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "optparse"
+require "arabic"
+
+scheme = nil
+
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: arabic [options] [text | file...]"
+  opts.separator ""
+  opts.separator "Transliterate Arabic script to Roman script."
+  opts.separator ""
+  opts.separator "Examples:"
+  opts.separator "  arabic 'مرحبا'"
+  opts.separator "  echo 'مرحبا' | arabic"
+  opts.separator "  arabic text.txt"
+  opts.separator "  arabic -s urdu 'اردو'"
+  opts.separator "  arabic -s iso233 'كتاب'"
+  opts.separator ""
+  opts.separator "Options:"
+
+  opts.on("-s", "--scheme SCHEME", %w[default urdu iso233], "Transliteration scheme (default, urdu, iso233)") do |s|
+    scheme = s == "default" ? nil : s.to_sym
+  end
+
+  opts.on("-v", "--version", "Show version") do
+    puts "arabic #{Arabic::VERSION}"
+    exit
+  end
+
+  opts.on("-h", "--help", "Show this help message") do
+    puts opts
+    exit
+  end
+end
+
+parser.parse!
+
+transliterate = lambda do |text|
+  Arabic.transliterate(text, scheme || :arabic)
+end
+
+if ARGV.empty?
+  if $stdin.tty?
+    puts parser
+    exit 1
+  else
+    $stdin.each_line do |line|
+      puts transliterate.call(line.chomp)
+    end
+  end
+else
+  ARGV.each do |arg|
+    if File.file?(arg)
+      File.foreach(arg) do |line|
+        puts transliterate.call(line.chomp)
+      end
+    else
+      puts transliterate.call(arg)
+    end
+  end
+end

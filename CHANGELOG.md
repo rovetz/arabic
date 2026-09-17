@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- GitHub Actions CI workflow for modern Ruby versions (3.1, 3.2, 3.3, 3.4) on `main` branch.
+- CLI executable `exe/arabic` supporting direct arguments, files, piped STDIN, and scheme flag (`-s`).
+- Integration tests for CLI arguments, flags, and STDIN input.
+- GitHub Actions CI workflow for modern Ruby versions on `main` branch with experimental `head`.
 - Automated GitHub Actions release workflow for building and publishing gem on git tag push.
 - Precompiled and cached regular expressions for character tables for improved performance.
 - Case-insensitive scheme resolution (e.g. `:urdu`, `"urdu"`, `:URDU`).
@@ -21,7 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Update development dependencies (rubocop, rake, rdoc, irb, json, minitest).
 - Namespaced `Urdu`, `Iso233`, and `Persian` modules under `Arabic` (`Arabic::Urdu`, `Arabic::Iso233`, `Arabic::Persian`) with backwards-compatible top-level aliases.
-- Set minimum required Ruby version to `>= 3.2.0` in gemspec.
+- Set minimum required Ruby version to `>= 3.3.0` in gemspec.
+- Untrack `Gemfile.lock` and add to `.gitignore` following gem development best practices.
+- Update copyright year to 2018-2026 in `LICENSE.txt`.
 
 ### Removed
 - Legacy `.travis.yml` configuration.

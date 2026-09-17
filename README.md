@@ -1,6 +1,7 @@
 # Arabic
 
 [![Ruby](https://github.com/rovetz/arabic/actions/workflows/ruby.yml/badge.svg)](https://github.com/rovetz/arabic/actions/workflows/ruby.yml)
+[![Gem Version](https://badge.fury.io/rb/arabic.svg)](https://badge.fury.io/rb/arabic)
 
 Romanization of Arabic. It transliterates Arabic text to the Roman (Latin) script.
 
@@ -44,6 +45,30 @@ Arabic.t("اردو", :iso233)
 # Numbers and punctuation
 Arabic.t("٠١٢٣٤٥٦٧۸٩")
 # => "0123456789"
+```
+
+### Command Line Interface (CLI)
+
+You can also use `arabic` directly from the command line:
+
+```bash
+# Direct argument
+$ arabic "العربية"
+alerbyt
+
+# Piped input (STDIN)
+$ echo "العربية" | arabic
+alerbyt
+
+# File input
+$ arabic text.txt
+
+# Select transliteration scheme (default, urdu, iso233)
+$ arabic -s urdu "اردو"
+ardv
+
+$ arabic -s iso233 "كتاب"
+ktʾb
 ```
 
 ## Development

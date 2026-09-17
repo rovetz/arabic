@@ -9,3 +9,4 @@
 *.gem
 /.ruby-lsp/
 /.ruby-version
+Gemfile.lock
