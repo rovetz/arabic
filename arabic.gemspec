@@ -15,19 +15,26 @@ Gem::Specification.new do |spec|
   spec.description   = "Converts Arabic text to the Roman (Latin) script"
   spec.homepage      = "https://github.com/rovetz/arabic"
   spec.license       = "MIT"
+  spec.required_ruby_version = ">= 3.1.0"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = "https://github.com/rovetz/arabic"
+  spec.metadata["changelog_uri"] = "https://github.com/rovetz/arabic/blob/main/CHANGELOG.md"
+  spec.metadata["bug_tracker_uri"] = "https://github.com/rovetz/arabic/issues"
+  spec.metadata["rubygems_mfa_required"] = "true"
+
+  spec.files = Dir.chdir(__dir__) do
+    `git ls-files -z`.split("\x0").reject do |f|
+      (File.expand_path(f) == __FILE__) ||
+        f.start_with?(*%w[bin/ test/ spec/ features/ .git .github])
+    end
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 2.6"
-  spec.add_development_dependency "rake", "~> 13.2"
-  spec.add_development_dependency "minitest", "~> 5.25"
-  spec.add_development_dependency "rubocop", "~> 1.64"
   spec.add_development_dependency "irb"
+  spec.add_development_dependency "minitest", "~> 5.25"
+  spec.add_development_dependency "rake", "~> 13.2"
   spec.add_development_dependency "rdoc"
-  spec.metadata['rubygems_mfa_required'] = 'true'
+  spec.add_development_dependency "rubocop", "~> 1.64"
 end

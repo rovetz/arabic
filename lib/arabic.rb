@@ -60,13 +60,13 @@ module Arabic
     "ي" => "y",
     "و‎" => "u",
     # Vowels and Diphthongs
-    "َ‎"  => "a",
-    "ُ"  => "u",
-    "ِ‎"  => "i"
+    "َ‎" => "a",
+    "ُ" => "u",
+    "ِ‎" => "i"
   }.freeze
 
   class << self
-    def transliterate(string="", to=:arabic)
+    def transliterate(string = "", to = :arabic)
       character_table = Module.const_get(to.to_s.capitalize)::CHARACTER_TABLE
       string.to_s.gsub(/#{Regexp.union(character_table.keys).source}/i, character_table)
     end
