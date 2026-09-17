@@ -5,6 +5,8 @@ AllCops:
     - 'bin/console'
     - 'bin/setup'
     - 'pkg/**/*'
+    - 'vendor/**/*'
+    - 'coverage/**/*'
 
 Gemspec/DevelopmentDependencies:
   EnforcedStyle: gemspec
