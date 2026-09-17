@@ -1,5 +1,7 @@
 # Arabic
 
+[![Ruby](https://github.com/rovetz/arabic/actions/workflows/ruby.yml/badge.svg)](https://github.com/rovetz/arabic/actions/workflows/ruby.yml)
+
 Romanization of Arabic. It transliterates Arabic text to the Roman (Latin) script.
 
 ## Installation
@@ -7,7 +9,7 @@ Romanization of Arabic. It transliterates Arabic text to the Roman (Latin) scrip
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'arabic'
+gem "arabic"
 ```
 
 And then execute:
@@ -22,22 +24,31 @@ Or install it yourself as:
 
 ```ruby
 require "arabic"
-```
 
-And then
-
-```ruby
+# Default Arabic transliteration
 Arabic.transliterate("العربية")
-```
-or
+# => "alerbyt"
 
-```ruby
+# Short alias .t
 Arabic.t("العربية")
+# => "alerbyt"
+
+# Urdu scheme
+Arabic.t("اردو", :urdu)
+# => "ardv"
+
+# ISO 233 scheme
+Arabic.t("اردو", :iso233)
+# => "ʾrdw"
+
+# Numbers and punctuation
+Arabic.t("٠١٢٣٤٥٦٧۸٩")
+# => "0123456789"
 ```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `bundle exec rake` to run tests and code style checks (RuboCop). You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
