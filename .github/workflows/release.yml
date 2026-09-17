@@ -12,6 +12,8 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_IGNORE_RUBY_VERSION: "true"
 
     steps:
       - name: Checkout code

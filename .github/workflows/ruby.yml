@@ -20,6 +20,8 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_IGNORE_RUBY_VERSION: "true"
     strategy:
       fail-fast: false
       matrix:
