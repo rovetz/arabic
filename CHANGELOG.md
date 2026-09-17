@@ -24,8 +24,49 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Legacy `.travis.yml` configuration.
 - Unused `exe` executable configuration from gemspec.
 
-## [0.1.7]
+## [0.1.7] - 2025-04-03
+
+### Changed
+- Update gem dependencies and bump version.
+
+## [0.1.6] - 2018-09-13
 
 ### Added
-- ISO 233 transliteration scheme support.
-- Urdu transliteration scheme support.
+- ISO 233 transliteration scheme (`:iso233`).
+- Additional test cases for Arabic phrases.
+
+## [0.1.5] - 2018-09-13
+
+### Changed
+- Refactor language architecture: separate Urdu transliteration into a dedicated module and file.
+
+## [0.1.4] - 2018-09-05
+
+### Changed
+- Standardize character output to use ASCII characters.
+
+## [0.1.3] - 2018-08-17
+
+### Added
+- Additional Urdu characters support.
+- Additional test coverage for Urdu transliteration.
+
+### Fixed
+- Fix Urdu numerals and character mappings.
+
+## [0.1.2] - 2018-08-16
+
+### Added
+- Additional Urdu symbols (including 'ئ').
+
+## [0.1.1] - 2018-08-16
+
+### Added
+- Initial Urdu transliteration support.
+
+## [0.1.0] - 2018-04-04
+
+### Added
+- Initial release.
+- Core Arabic transliteration to Roman (Latin) script.
+- Support for Arabic numerals, punctuation, consonants, and vowels.
