@@ -32,7 +32,7 @@ jobs:
         run: gem build arabic.gemspec
 
       - name: Publish to RubyGems
-        if: env.RUBYGEMS_API_KEY != ''
+        if: ${{ secrets.RUBYGEMS_API_KEY != '' }}
         env:
           RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
         run: |
